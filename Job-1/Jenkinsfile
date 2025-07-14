@@ -1,0 +1,17 @@
+pipeline{
+    agent any 
+    stages{
+        stage('Git Checkout'){
+            steps{
+               git branch: 'Jenkins', url: 'https://github.com/ManojKRISHNAPPA/super28batch.git' 
+            }
+        }
+
+        stage('Build'){
+            steps{
+                echo 'Building the project...'
+            }
+        }
+
+    }
+}

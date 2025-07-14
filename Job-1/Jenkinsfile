@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-               git branch: 'Jenkins', url: 'https://github.com/ManojKRISHNAPPA/super28batch.git' 
+               git branch: 'main', url: 'https://github.com/ManojKRISHNAPPA/test-1.git' 
             }
         }
 

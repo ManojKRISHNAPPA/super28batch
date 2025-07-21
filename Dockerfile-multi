@@ -1,0 +1,26 @@
+
+#stage 1
+
+FROM python:3.10 as builder
+
+WORKDIR /install
+
+COPY requirements.txt .
+
+RUN pip install --prefix=/install/python-packages -r requirements.txt
+
+
+# stage 2
+
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY --from=builder /install/python-packages /usr/local
+
+COPY . .
+
+CMD ["python","app.py"]
+
+
+

@@ -1,6 +1,6 @@
 pipeline{
     parameters{
-        choice( name: 'terraformAction',choice: ['apply','destroy'],description:'Choose your terraform action to perform')
+        choice( name: 'terraformAction',choices: ['apply','destroy'],description:'Choose your terraform action to perform')
     }
 
     environment{
